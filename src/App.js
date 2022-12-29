@@ -20,9 +20,7 @@ function App() {
     <Router>
       <TopBar />
       <Routes>
-        <Route path="/">
-          <Homepage />
-        </Route>
+        <Route path="/" element={<Homepage  />} />
         <Route path="/register">{user ? <Homepage /> : <Register />}</Route>
         <Route path="/login">{user ? <Homepage /> : <Login />}</Route>
         <Route path="/write">{user ? <Write /> : <Login />}</Route>
