@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import "./write.css";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
 import { axiosInstance } from '../../config';
@@ -8,7 +9,7 @@ export default function Write() {
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
   const { user } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = {
@@ -28,9 +29,9 @@ export default function Write() {
     }
     try {
       const res = await axiosInstance.post("/posts", newPost);
-     // window.location.replace("/post/" + res.data._id);
+      navigate(`/post/${res.data._id}`);
       console.log(res.data._id);
-    } catch (err) {}
+    } catch (err) {}  
   };
   return (
     <div className="write">
