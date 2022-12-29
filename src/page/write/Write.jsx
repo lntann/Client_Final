@@ -29,7 +29,7 @@ const navigate = useNavigate();
     }
     try {
       const res = await axiosInstance.post("/posts", newPost);
-      navigate('/');
+      navigate(`/post/${res.data._id}`);
       console.log(res.data._id);
     } catch (err) {}
   };
