@@ -6,7 +6,7 @@ import "./homepage.css";
 import axios from "axios";
 import * as React from 'react';
 import { useEffect, useState } from "react";
-
+import { axiosInstance } from '../../config';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-       const res = await axios.get("/posts" /* + search*/);
+       const res = await axiosInstance.get("/posts" /* + search*/);
       setPosts(res.data);
       console.log(res);
     };
