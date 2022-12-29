@@ -37,7 +37,7 @@ export default function Write() {
     <div className="write">
       {file && (
         <img className="writeImg" src={URL.createObjectURL(file)} alt="" />
-      )}
+      )} 
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
