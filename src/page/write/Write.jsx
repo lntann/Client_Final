@@ -29,7 +29,7 @@ export default function Write() {
     }
     try {
       const res = await axiosInstance.post("/posts", newPost);
-      navigate(`/post/${res.data._id}`);
+      // navigate(`/post/${res.data._id}`);
       console.log(res.data._id);
     } catch (err) {}  
   };
