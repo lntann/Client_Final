@@ -45,7 +45,7 @@ export default function Write() {
           </label>
           <input
             type="file"
-            id="fileInput"
+            id="fileInput" 
             style={{ display: "none" }}
             onChange={(e) => setFile(e.target.files[0])}
           />
